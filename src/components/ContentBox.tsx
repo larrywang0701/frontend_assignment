@@ -2,7 +2,8 @@ interface ContentBoxProps {
   title?: string;
   children: string;
 }
-  
+
+// A simple content box that has a (optional) title and the content.
 const ContentBox: React.FC<ContentBoxProps> = ({ title, children }) => {
   return (
     <div className="bg-yellow-100 p-6 mb-4 shadow-lg">

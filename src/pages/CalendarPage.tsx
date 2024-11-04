@@ -1,27 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import MainContainer from "../components/MainContainer";
 import PageHeader from "../components/PageHeader";
 import ContentBox from "../components/ContentBox";
-import { title } from "process";
+import NavigationButton from "../components/NavigationButton";
 
+// The Calendars & Newsletters page (./calendars)
 function CalendarPage() {
-  const navigate = useNavigate();
-  
-  interface NavigationButtonProps {
-    label: string;
-    onClick: () => void;
-  }
-  
-  const NavigationButton: React.FC<NavigationButtonProps> = ({ label, onClick }) => {
-    return (
-      <button
-        onClick={onClick}
-        className="block w-full text-left bg-black text-white font-bold p-3 mb-2 hover:bg-gray-700"
-      >
-        {label}
-      </button>
-    );
-  };
 
   interface ContentProps {
     label: string,
@@ -38,6 +21,7 @@ function CalendarPage() {
     );
   }
 
+  // The contents to be shown in the page
   const contentArray = [
     {
       label: "Public Calendar >>",
@@ -72,7 +56,14 @@ Week at SoA — A weekly community-only email listing SoA events as well as publ
           You may find the following useful resources here:
         </ContentBox>
         <div className="bg-gray-100 p-4 mt-4 shadow-lg bg-opacity-30 rounded-lg">
-          {contentArray.map((content) => <Content label={content.label} description={content.description} url={content.url}/>)}
+          {contentArray.map((content, index) =>
+            <Content
+              key={index}
+              label={content.label}
+              description={content.description}
+              url={content.url}
+            />
+          )}
         </div>  
       </div>
     </MainContainer>

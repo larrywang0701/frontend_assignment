@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Background from "./Background";
 
+// The main container for every page
 function MainContainer({children} : {children: ReactNode}) {
   return (
   <>

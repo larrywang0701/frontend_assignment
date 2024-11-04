@@ -1,13 +1,7 @@
 import { useState } from "react";
 
+// The page header for every page, including the page title and a navigation sidebar
 const PageHeader = ({ children }: {children: string}) => {
-  /*return (
-    <div className="bg-white py-4 rounded-md shadow-lg text-white text-center">
-      <div className="text-3xl font-bold text-center my-6 text-gray-800">
-        {children}
-      </div>
-    </div>
-  );*/
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 

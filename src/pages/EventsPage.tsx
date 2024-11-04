@@ -2,9 +2,9 @@ import EventCard from "../components/EventCard";
 import MainContainer from "../components/MainContainer";
 import PageHeader from "../components/PageHeader";
 
+// The event data from the official webpage
 const events = [
   {
-    date: "16",
     day: "16 - 04",
     month: "Nov",
     title: `"Threshold" — Undergraduate Exhibition`,
@@ -14,7 +14,6 @@ const events = [
     image: "https://ucarecdn.com/7e906111-9ba9-4f35-a36a-ed63508adaef/-/resize/120/" 
   },
   {
-    date: "04",
     day: "04",
     month: "Nov",
     title: "Celebrating Jane Davis Doggett, MFA ’56",
@@ -23,7 +22,6 @@ const events = [
     time: "4:00 PM - 6:00 PM EST"
   },
   {
-    date: "04",
     day: "04",
     month: "Nov",
     title: "Mondays at Beinecke: 1924 and the Centennial of the Dixwell Community House",
@@ -32,7 +30,6 @@ const events = [
     time: "4:00 PM - 5:00 PM EST"
   },
   {
-    date: "04",
     day: "04",
     month: "Nov",
     title: "Visiting Artist Lecture with SoA Alum Robert Andy Coombs",
@@ -42,7 +39,6 @@ const events = [
     image: "https://ucarecdn.com/4eb3bbba-61f0-45ce-a7b5-0152b010857a/-/crop/1685x1684/0,349/-/preview/-/resize/120/"
   },
   {
-    date: "04",
     day: "04",
     month: "Nov",
     title: "Figure Drawing Workshop",
@@ -52,7 +48,6 @@ const events = [
     image: "https://ucarecdn.com/157c30ed-2dd2-427e-888c-9e335e737178/-/crop/1545x1546/0,0/-/preview/-/resize/120/"
   },
   {
-    date: "04",
     day: "04",
     month: "Nov",
     title: "Architectural Forum: Prof. Jack Halberstam (Columbia University)",
@@ -62,7 +57,7 @@ const events = [
   },
 ];
 
-
+// The Happening at SOA page
 function EventsPage() {
   return (
   <>
@@ -74,7 +69,6 @@ function EventsPage() {
           {events.map((event, index) => (
             <EventCard
               key={index}
-              date={event.date}
               day={event.day}
               month={event.month}
               title={event.title}

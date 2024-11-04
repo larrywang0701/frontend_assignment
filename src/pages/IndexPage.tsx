@@ -2,26 +2,46 @@ import { useNavigate } from "react-router-dom";
 import MainContainer from "../components/MainContainer";
 import PageHeader from "../components/PageHeader";
 import ContentBox from "../components/ContentBox";
+import NavigationButton from "../components/NavigationButton";
 
+// The Home page
 function IndexPage() {
 
   const navigate = useNavigate();
-  
-  interface NavigationButtonProps {
-    label: string;
-    onClick: () => void;
+
+  interface ContentProps {
+    label: string,
+    description: string,
+    url: string,
   }
-  
-  const NavigationButton: React.FC<NavigationButtonProps> = ({ label, onClick }) => {
-    return (
-      <button
-        onClick={onClick}
-        className="block w-full text-left bg-black text-white font-bold p-3 mb-2 hover:bg-gray-700"
-      >
-        {label}
-      </button>
+
+  const Content: React.FC<ContentProps> = ({label, description, url}) => {
+    return(
+    <div>
+      <NavigationButton label={label} onClick={() => navigate(url)} />
+      <ContentBox>{description}</ContentBox>
+    </div>
     );
-  };
+  }
+
+  // The contents to be shown in the page
+  const contentArray = [
+    {
+      label: "Happening at SOA",
+      description: "Events that happen at the Yale School of Art",
+      url: "./events"
+    },
+    {
+      label: "Community Bulletin Board",
+      description: "Updates and notices posted by the School of Art community, providing a platform for communication among students, faculty, and staff.",
+      url: "./bulletin_board"
+    },
+    {
+      label: "Calendars & Newsletters",
+      description: "Access to school calendars and newsletters to stay updated on events and information shared within the community.",
+      url: "./calendars"
+    }
+  ]
 
   return (
   <>
@@ -33,12 +53,14 @@ function IndexPage() {
         </ContentBox>
         <div className="bg-gray-100 p-4 mt-4 shadow-lg bg-opacity-30 rounded-lg">
           <h2 className="text-2xl font-bold mb-2 text-white">On This Page</h2>
-          <NavigationButton label="Happening at SOA" onClick={() => navigate("./events")} />
-          <ContentBox>Content related to happenings at the Yale School of Art, including events, announcements, and more...</ContentBox>
-          <NavigationButton label="Community Bulletin Board" onClick={() => navigate("./bulletin_board")} />
-          <ContentBox>Updates and notices posted by the School of Art community, providing a platform for communication among students, faculty, and staff.</ContentBox>
-          <NavigationButton label="Calendars & Newsletters" onClick={() => navigate("./calendars")} />
-          <ContentBox>Access to school calendars and newsletters to stay updated on events and information shared within the community.</ContentBox>
+          {contentArray.map((content, index) =>
+            <Content
+              key={index}
+              label={content.label}
+              description={content.description}
+              url={content.url}
+            />
+          )}
         </div>  
       </div>
     </MainContainer>

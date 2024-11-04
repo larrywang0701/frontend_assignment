@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import BulletinBoardItem from '../components/BulletinBoardItem';
 import MainContainer from '../components/MainContainer';
 import PageHeader from '../components/PageHeader';
 
+// The data from the bulletin board of the official webpage
 const bulletinData = [
   {
     title: "From our friends at the Yale Center for Environmental Justice",
@@ -26,6 +26,7 @@ One facet of the conference programming we hope to organize is a juried art show
   }
 ];
 
+// The Community Bulletin Board page (./bulletin_board)
 function BulletinBoardPage(){
   return (
     <>

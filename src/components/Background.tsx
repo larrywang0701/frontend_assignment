@@ -1,3 +1,4 @@
+// The background for every page
 export default function Background() {
   return (
   <>

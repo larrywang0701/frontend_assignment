@@ -1,7 +1,6 @@
 import React from 'react';
 
 interface EventCardProps {
-  date: string;
   day: string;
   month: string;
   title: string;
@@ -11,7 +10,8 @@ interface EventCardProps {
   image?: string;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ date, day, month, title, description, location, time, image }) => {
+// The element for displaying an event in the Happening at SOA page. 
+const EventCard: React.FC<EventCardProps> = ({ day, month, title, description, location, time, image }) => {
   return (
     <div className="flex p-4 bg-white rounded-lg shadow-md mb-4 border-l-4 border-blue-500">
 
